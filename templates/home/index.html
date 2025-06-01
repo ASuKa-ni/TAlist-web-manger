@@ -1,0 +1,32 @@
+{{ define "home/index.html" }}
+<div>
+    <table border="1" class="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>班级名称</th>
+                <th>教室</th>
+                <th>教师</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>状态</th>
+                <th>最新更新时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .Data}}
+            <tr>
+                <td>{{.Id}}</td>
+                <td>{{.DataClazzName}}</td>
+                <td>{{.DataClazzRoom}}</td>
+                <td>{{.DataClazzTeacher}}</td>
+                <td>{{.DataClazzStartDate}}</td>
+                <td>{{.DataClazzEndDate}}</td>
+                <td>{{.DataClazzStatus}}</td>
+                <td>{{.DataClazzLatestDate}}</td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+</div>
+{{ end }}
