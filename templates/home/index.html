@@ -7,10 +7,8 @@
                 <th>班级名称</th>
                 <th>教室</th>
                 <th>教师</th>
-                <th>开始时间</th>
-                <th>结束时间</th>
                 <th>状态</th>
-                <th>最新更新时间</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +18,10 @@
                 <td>{{.DataClazzName}}</td>
                 <td>{{.DataClazzRoom}}</td>
                 <td>{{.DataClazzTeacher}}</td>
-                <td>{{.DataClazzStartDate}}</td>
-                <td>{{.DataClazzEndDate}}</td>
                 <td>{{.DataClazzStatus}}</td>
-                <td>{{.DataClazzLatestDate}}</td>
+                <td>
+                    <button hx-post="http://tils.ask/api/clazz/delete" hx-vals='{"Id": {{.Id}}}'>删除</button>
+                </td>
             </tr>
             {{end}}
         </tbody>
