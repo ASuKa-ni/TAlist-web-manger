@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTMX Example</title>
+    <script src="htmx.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- topbar -->
+<div id="topbar" class="topbar">
+    <p>Htmx</p>
+    <p>logout</p>
+</div>
+
+<!-- 主体容器：侧边栏 + 内容区 -->
+<div class="main-container">
+    <!-- sidebar -->
+    <div id="sidebar" class="sidebar">
+        <h2>sidebar</h2>
+        <ul>
+            <li><p>ls 1</p></li>
+            <li><p>ls 2</p></li>
+            <li><p>ls 3</p></li>
+        </ul>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content">
+        <h1>Info:</h1>
+        <!-- 在 Add 按钮旁边添加表单 -->
+        <form id="postForm">
+            <input type="number" name="Id" placeholder="ID" />
+            <input type="text" name="DataClazzName" placeholder="班级名称" />
+            <input type="text" name="DataClazzRoom" placeholder="教室" />
+            <input type="text" name="DataClazzTeacher" placeholder="教师" />
+            <input type="text" name="DataClazzStatus" placeholder="状态" />
+        </form>
+        <button type="button" hx-post="http://tils.ask/api/clazz/add" hx-include="#postForm" hx-target="#msg">Add</button>
+        <button type="button" hx-post="http://tils.ask/api/clazz/search" hx-include="#postForm" hx-target="#showlist">Search</button>
+        <button type="button" hx-post="http://tils.ask/api/clazz/edit" hx-include="#postForm" hx-target="#msg">edit</button>
+        <div id="msg"></div>
+        <div id="showlist" hx-get="http://tils.ask/api/clazz" hx-trigger="load" hx-target="this"></div>
+    </div>
+</div>
+
+</body>
+</html>

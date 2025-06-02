@@ -1,0 +1,78 @@
+/* index.css */
+
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* 顶栏样式 */
+.topbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 主体容器 */
+main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* 主内容容器 - 支持 sidebar + content 并排 */
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    height: calc(100vh - 50px); /* 减去 topbar 的高度 */
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+/* 内容区域样式 */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.content h1 {
+    margin-bottom: 10px;
+}
+
+.content button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
